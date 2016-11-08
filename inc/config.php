@@ -1,4 +1,4 @@
-<?php 
+<?php
 	//Theme setup
 	function ungrynerd_setup() {
 		load_theme_textdomain('ungrynerd', get_template_directory() . '/languages');
@@ -34,6 +34,9 @@
 			'caption',
 		));
 
+		add_theme_support('custom-logo');
+		add_theme_support('custom-header');
+
 	}
 	add_action('after_setup_theme', 'ungrynerd_setup');
 
@@ -54,5 +57,5 @@
 		 	'name' => esc_html__('Barra Lateral', 'ungrynerd')
 		));
 	}
-	add_action('widgets_init', 'ungrynerd_widgets_init');	
+	add_action('widgets_init', 'ungrynerd_widgets_init');
 ?>

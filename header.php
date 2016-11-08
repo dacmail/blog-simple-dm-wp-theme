@@ -6,21 +6,36 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<header class="navbar" id="header">
+	<aside class="pre-header">
+		<div class="container">
+			Noticias del Ayuntamiento de Madrid
+			<img class="logo-madrid" src="<?php ungrynerd_path('/images/logo_madrid.png') ?>" alt="Ayuntamiento de Madrid">
+		</div>
+	</aside>
+	<header class="navbar header" id="header">
 		<div class="container">
 			<div class="navbar-header">
 				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-menu">
 					<span class="sr-only"><?php _e('Toggle navigation', 'ungrynerd'); ?></span>
 					<?php _e('Menu', 'ungrynerd'); ?>
 				</button>
-				<a href="<?php echo esc_url(home_url('/')); ?>" class="logo navbar-brand"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>" /></a>
+				<a href="<?php echo esc_url(home_url('/')); ?>" class="logo navbar-brand">
+					<?php if (has_custom_logo()): ?>
+						<?php the_custom_logo(); ?>
+					<?php else: ?>
+						<?php bloginfo('name'); ?>
+					<?php endif ?>
+				</a>
 			</div>
 			<?php wp_nav_menu(array('container' => 'nav',
-								'container_id' => 'main-menu', 
-								'container_class' => 'collapse width navbar-collapse', 
-								'menu_class' => 'nav navbar-nav',
+								'container_id' => 'main-menu',
+								'container_class' => 'collapse width navbar-collapse',
+								'menu_class' => 'main-nav',
 								'theme_location' => 'main',
 								'fallback_cb' => false)); ?>
 
 		</div> <!--- /.container -->
+		<?php if (has_header_image()): ?>
+			<div class="header-image" style="background-image:url(<?php header_image(); ?>)"></div>
+		<?php endif ?>
 	</header>
