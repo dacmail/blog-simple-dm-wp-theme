@@ -12,7 +12,8 @@
 		// Soporte para miniaturas y definición de tamaños
 		add_theme_support('post-thumbnails');
 		if ( function_exists('add_image_size')) {
-			add_image_size('featured', 800, 400, true);
+			add_image_size('col-8', 1000, 9999, false);
+			add_image_size('col-4', 500, 9999, false);
 		}
 
 		// Definición menús
@@ -52,7 +53,7 @@
 			'id' => 'sidebar-1',
 		    'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		    'after_widget' => '</div>',
-		    'before_title' => '<h2 class="title">',
+		    'before_title' => '<h2 class="post-category">',
 		 	'after_title' => '</h2>',
 		 	'name' => esc_html__('Barra Lateral', 'ungrynerd')
 		));
