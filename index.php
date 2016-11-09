@@ -1,6 +1,9 @@
 <?php get_header() ?>
 <div id="container" class="container">
 	<div class="row">
+		<div class="col-sm-12">
+			<?php get_template_part('templates/stickys'); ?>
+		</div>
 		<div class="col-sm-8">
 			<section id="content" class="clearfix">
 				<?php get_template_part( 'templates/loop', 'index' ); ?>

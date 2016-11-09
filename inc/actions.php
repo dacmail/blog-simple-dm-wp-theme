@@ -117,3 +117,9 @@
 		return $classes;
 	});
 
+	add_action('pre_get_posts', 'ungrynerd_ignore_sticky');
+	function ungrynerd_ignore_sticky($query) {
+	    if (is_home() && $query->is_main_query() || is_front_page())
+	        $query->set('post__not_in', get_option('sticky_posts'));
+	}
+

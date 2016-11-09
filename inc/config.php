@@ -12,8 +12,10 @@
 		// Soporte para miniaturas y definición de tamaños
 		add_theme_support('post-thumbnails');
 		if ( function_exists('add_image_size')) {
+			add_image_size('col-12', 1500, 9999, false);
 			add_image_size('col-8', 1000, 9999, false);
 			add_image_size('col-4', 500, 9999, false);
+			add_image_size('col-4-crop', 500, 270, false);
 		}
 
 		// Definición menús
