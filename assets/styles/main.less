@@ -555,6 +555,54 @@ img {
             text-align: center;
         }
     }
+    .post-links {
+        background-color: #fff;
+        margin-bottom: 120px;
+        margin-top:-90px;
+        h3 {
+            background-color: #333333;
+            font-family: Montserrat;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-align: center;
+            color: #ffffff;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        ul {
+            list-style: none;
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+            li {
+                font-family: Montserrat;
+                font-size: 16px;
+                text-align: center;
+                color: #333333;
+                position: relative;
+                margin-bottom: 30px;
+                padding-bottom: 30px;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    width: 150px;
+                    border-top:1px solid #dddddd;
+                    bottom:0px;
+                    left: 50%;
+                    margin-left: -75px;
+                }
+                a {
+                    color: #333333;
+                }
+                &:last-child {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
 }
 .admin-bar {
     &.single {
