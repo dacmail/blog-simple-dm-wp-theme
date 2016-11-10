@@ -1,9 +1,12 @@
 <?php get_header() ?>
-<div id="container" class="clearfix">
-	<section id="content" class="clearfix">
-		<?php get_template_part( 'loop', 'single' ); ?>
-		<?php comments_template(); ?>
-	</section>
-	<?php get_sidebar() ?>
-</div>
+<section id="container" class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <?php get_template_part('templates/loop', 'single'); ?>
+		</div>
+        <div class="col-sm-1">
+            <?php get_template_part('templates/post-share'); ?>
+        </div>
+	</div>
+</section>
 <?php get_footer() ?>
