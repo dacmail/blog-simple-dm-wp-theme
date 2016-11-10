@@ -16,6 +16,7 @@
 			add_image_size('col-8', 1000, 9999, false);
 			add_image_size('col-4', 500, 9999, false);
 			add_image_size('col-4-crop', 500, 270, false);
+			add_image_size('col-4-square', 500, 500, true);
 		}
 
 		// Definición menús

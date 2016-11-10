@@ -428,6 +428,73 @@ img {
     }
 }
 /*
+    ARCHIVE AND SEARCH
+*/
+.archive, .search {
+    .term-title {
+        position: relative;
+        background-color: #fff;
+        font-family: Montserrat;
+        font-size: 16px;
+        letter-spacing: 2px;
+        color: #333333;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding:30px;
+        .term {
+            margin-top:10px;
+            display: block;
+            font-size: 30px;
+            color: #333333;
+        }
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom:0px;
+            left: 30px;
+            width: 135px;
+            border-bottom: 1px solid #ddd;
+        }
+    }
+    .hentry {
+        background-color: #fff;
+        padding:30px;
+        position: relative;
+        .wp-post-image {
+            width: 135px;
+            height: 135px;
+            object-fit: cover;
+            float: left;
+        }
+        .post-title {
+            text-align: left;
+            font-size: 24px;
+        }
+        .post-date {
+            text-align: left;
+        }
+        .post-author {
+            text-align: left;
+            position: relative;
+        }
+        &.has-post-thumbnail {
+            .post-wrapper {
+                margin-left: 165px;
+            }
+        }
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom:10px;
+            left: 30px;
+            width: 135px;
+            border-bottom: 1px solid #ddd;
+        }
+    }
+}
+/*
     SINGLE POST
 */
 .single, .page {
