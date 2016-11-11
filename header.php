@@ -16,8 +16,8 @@
 		<div class="container">
 			<div class="navbar-header">
 				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-menu">
-					<span class="sr-only"><?php _e('Toggle navigation', 'ungrynerd'); ?></span>
-					<?php _e('Menu', 'ungrynerd'); ?>
+					<span class="sr-only"><?php _e('Menu', 'ungrynerd'); ?></span>
+					<i class="fa fa-bars"></i>
 				</button>
 				<a href="<?php echo esc_url(home_url('/')); ?>" class="logo navbar-brand">
 					<?php if (has_custom_logo()): ?>
