@@ -601,18 +601,28 @@ img {
         width: 64px;
         &.affix {
             top: 0px;
-
         }
         &.affix-bottom {
             position: absolute;
         }
         &:before {
             background-color: #bbbbbb;
-            content:"";
             width: 100%;
             height: 64px;
             display: block;
             color: #fff;
+            font-family: 'diariomadrid' !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 64px;
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: "\e914";
+            text-align: center;
         }
         a {
             display: block;

@@ -12,7 +12,21 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-ico_autor:before {
+  content: "\e912";
+}
+.icon-ico_calendario:before {
+  content: "\e913";
+}
+.icon-ico_compartir-2:before {
+  content: "\e914";
+}
+.icon-ico_mas:before {
+  content: "\e915";
+}
+.icon-ico_menos:before {
+  content: "\e916";
+}
 .icon-ico_comillasabre:before {
   content: "\e900";
 }
