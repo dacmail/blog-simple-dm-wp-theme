@@ -1,4 +1,15 @@
-	<footer class="footer">
+	<aside id="sidebar" class="sidebar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <?php dynamic_sidebar("sidebar-1"); ?>
+                </div>
+                <?php dynamic_sidebar("sidebar-2"); ?>
+            </div>
+        </div>
+    </aside>
+
+    <footer class="footer">
         <div class="container">
             &copy; Ayuntamiento de Madrid CC by
             <a href="#">¿Comentarios?</a>,

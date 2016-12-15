@@ -20,58 +20,80 @@
 @import (inline) "font-awesome.css";
 @import (inline) "fonts.css";
 @import "wp_defaults.less";
-@import 'https://fonts.googleapis.com/css?family=Montserrat|Lato:300,400,700,900';
+@import 'https://fonts.googleapis.com/css?family=Droid+Serif|Lato:300,400,700,900';
+/* MIXINS */
+.icon-top(@top: -40px, @icon: "\e905") {
+    position: relative;
+    &:before {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 100%;
+        top: @top;
+        left: 0%;
+        border-top:1px solid #dddddd;
+    }
+    &:after {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 66px;
+        top: @top - 8px;
+        left: 50%;
+        margin-left: -33px;
+        background: #fff;
+        color:#333;
+        font-size: 16px;
+        font-family: 'diariomadrid' !important;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 16px;
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: @icon;
+        text-align: center;
+    }
+}
 
 body {
-    background-color: #F1F1F1;
+    background-color: #fff;
     font-family: "Lato";
-    color: #888888;
+    color: #333333;
     font-size: 16px;
 }
 
 .post-title {
-    font-family: "Montserrat";
-    font-size: 30px;
-    text-align: center;
-    color: #333333;
-    margin:0px 0px 15px 0px;
+    font-family: DroidSerif;
+    font-size: 36px;
+    line-height: 1.11;
     a {
         color: #333333;
     }
 }
 .post-author {
-    font-size: 16px;
-    text-align: center;
-    color: #888888;
-    margin-bottom: 30px;
-    line-height: 1;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    i {
+        font-size: 16px;
+        margin-right: 7px;
+    }
 }
 
 .post-content {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #888888;
-    word-break: break-word;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.67;
 }
 
 .post-date {
-    font-family: Montserrat;
-    font-size: 16px;
-    text-align: center;
-    color: #333333;
-    margin-bottom: 15px;
-    line-height: 1;
-}
-
-.post-category {
-    .post-date;
-    display: block;
-    padding-bottom: 30px;
-    border-bottom:1px solid #dddddd;
-    margin-bottom: 20px;
-    a {
-        color: #333333;
-    }
+    .post-author;
 }
 
 img {
@@ -98,24 +120,38 @@ img {
 
 .header {
     background: #ffffff;
-    padding:15px 0px 0px 0px;
+    padding:0px 0px 30px 0px;
     border-radius: 0px;
+    margin-bottom: 60px;
     border:0px;
-    .custom-logo-link {
-        img {
-            max-height: 33px;
-            width: auto;
-        }
+    text-align: center;
+    border-bottom: solid 1px #dddddd;
+    background-image: linear-gradient(to bottom, #f1f1f1, #ffffff);
+    .logo {
+        font-size: 40px;
+        font-weight: 900;
+        line-height: 1.0;
+        text-align: center;
+        text-transform: uppercase;
+        color:#333;
+        display: inline-block;
+        width: 500px;
+        max-width: 100%;
     }
     .main-nav {
         display: table;
-        float: right;
+        margin: 20px auto 60px auto;
+        padding:0px;
         > .menu-item {
             display: table-cell;
             padding:0px 20px;
+            border-right: 1px solid #dddddd;
+            &:last-of-type {
+                border: 0px;
+            }
             a {
                 display: block;
-                line-height: 33px;
+                line-height: 20px;
             }
             &.menu-item-has-children {
                 &:after {
@@ -123,7 +159,7 @@ img {
                     top: 50%;
                     right: 5px;
                     margin-top: -7px;
-                    color:#fff;
+                    color:#333;
                     line-height: 14px;
                     content: "\f107";
                     font: normal normal normal 14px/1 FontAwesome;
@@ -143,17 +179,18 @@ img {
                 opacity: 0;
                 transition: opacity 0.3s ease-in;
                 position: absolute;
-                left:-10px;
+                left:0px;
                 background-color: #ffffff;
                 white-space: nowrap;
                 z-index: 999;
                 padding:20px 0px;
                 border:1px solid #dddddd;
+                text-align: left;
                 .has-header-image & {
                     border:0px;
                 }
                 .menu-item {
-                    padding:0px 30px;
+                    padding:0px 20px;
                     display:block;
                     a {
                         border-bottom:1px solid #dddddd;
@@ -168,7 +205,7 @@ img {
             }
             a {
                 font-size: 14px;
-                color: #888888;
+                color: #333;
                 text-transform: uppercase;
             }
             &:hover {
@@ -179,103 +216,66 @@ img {
             }
         }
     }
-    .header-image {
-        width: 100%;
-        height: 200px;
-        background-size: cover;
-        background-position: center center;
-    }
 }
-/*
-    STICKYS
-*/
-.main-sticky.hentry {
-    background: #ffffff;
-    padding:30px;
-    margin-bottom: 30px;
-    position: relative;
-    .wp-post-image {
-        width: 100%;
-        height: auto;
-    }
-    .post-data {
-        position: absolute;
-        z-index: 9;
-        background-color: #fff;
-        padding:30px 30px 0px 30px;
-        bottom: 0px;
-        left:50%;
-        width: 60%;
-        transform: translateX(-50%);
-    }
-}
-.secondary-stickys {
-    padding:30px;
-    margin-bottom: 30px;
-    background-color:#fff;
-    text-align: center;
-    .post-category {
-        margin-bottom: 60px;
-    }
-    .hentry {
-        vertical-align: top;
-        display: inline-block;
-        width: 33%;
-        padding:0px 15px;
-        .wp-post-image {
-            margin-bottom: 13px;
-        }
-        .post-title {
-            font-size: 18px;
-            line-height: 1.1;
-        }
-    }
-}
+
 /*
     BLOG LISTING
 */
 .listing.hentry {
-    margin-bottom: 30px;
+    margin-bottom: 100px;
     background: #ffffff;
-    padding:30px;
+    padding-bottom:60px;
+    border-bottom: solid 1px #dddddd;
     .wp-post-image {
-        margin-bottom: 30px;
-    }
-    .post-title {
-        font-family: Lato;
+        margin-bottom: 10px;
+        width: 100%;
     }
     .post-content {
-        padding:30px 0px;
-        margin-bottom: 30px;
-        position: relative;
-        &:before {
-            content: "";
-            position: absolute;
-            display: block;
-            width: 300px;
-            border-top:1px solid #dddddd;
-            top:0px;
-            left: 50%;
-            margin-left: -150px;
-        }
-        &:after {
-            content: "";
-            position: absolute;
-            display: block;
-            width: 300px;
-            border-top:1px solid #dddddd;
-            bottom:0px;
-            left: 50%;
-            margin-left: -150px;
-        }
+        padding:20px 0px 30px 0px;
     }
     .post-share {
         text-align: center;
         font-size: 18px;
+        position: relative;
+        margin-top:30px;
         a {
-            color: #bbbbbb;
+            color: #333;
             display: inline-block;
-            margin:0px 8px;
+            margin:0px 4px;
+        }
+        &:before {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 166px;
+            top: -30px;
+            left: 50%;
+            margin-left: -83px;
+            border-top:1px solid #dddddd;
+        }
+        &:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 66px;
+            top: -38px;
+            left: 50%;
+            margin-left: -33px;
+            background: #fff;
+            color:#333;
+            font-size: 16px;
+            font-family: 'diariomadrid' !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 16px;
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: "\e914";
+            text-align: center;
         }
     }
 }
@@ -284,50 +284,93 @@ img {
     SIDEBAR WIDGETS
 */
 .sidebar {
+    margin-top:100px;
     .widget {
-        background-color: #fff;
-        margin-bottom: 30px;
-        padding:30px;
-        .post-category {
-            margin-top:0px;
+        margin-bottom: 90px;
+        padding:30px 0px;
+        border-bottom: solid 1px #dddddd;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.5;
+        .widget-title {
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            line-height: 1.25;
+            text-align: center;
+            position: relative;
+            margin-bottom: 30px;
+            &:before {
+                position: absolute;
+                display: block;
+                content: "";
+                width: 100%;
+                top: -40px;
+                left: 0%;
+                border-top:1px solid #dddddd;
+            }
+            &:after {
+                position: absolute;
+                display: block;
+                content: "";
+                width: 66px;
+                top: -48px;
+                left: 50%;
+                margin-left: -33px;
+                background: #fff;
+                color:#333;
+                font-size: 16px;
+                font-family: 'diariomadrid' !important;
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 16px;
+                /* Better Font Rendering =========== */
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                content: "\e905";
+                text-align: center;
+            }
         }
         ul {
             list-style: none;
-            text-align: center;
+            text-align: left;
             margin: 0px;
             padding: 0px;
             li {
-                font-family: Montserrat;
+                font-family: DroidSerif;
                 font-size: 16px;
-                text-align: center;
+                text-align: left;
                 color: #333333;
                 position: relative;
                 margin-bottom: 15px;
                 padding-bottom: 15px;
-                &:after {
-                    content: "";
-                    position: absolute;
-                    display: block;
-                    width: 150px;
-                    border-top:1px solid #dddddd;
-                    bottom:0px;
-                    left: 50%;
-                    margin-left: -75px;
-                }
                 a {
                     color: #333333;
                 }
             }
         }
+        &.widget_text {
+            text-align: center;
+        }
         &.widget_search {
             padding: 0px;
+            .widget-title:after {
+                content: "\e903";
+            }
         }
         &.widget_tag_cloud {
-            text-align: center;
+            text-align: left;
+            .widget-title:after {
+                content: "\e907";
+            }
             a {
                 display: inline-block;
                 margin:5px;
-                background-color: #f1f1f1;
+                background-color: #eeeeee;
+                border: solid 1px #dddddd;
                 font-size: 14px !important;
                 text-transform: uppercase;
                 line-height: 1.7;
@@ -365,7 +408,7 @@ img {
         .form-control {
             width: 100%;
             background: #ffffff;
-            border:0px;
+            border:1px solid #bbbbbb;
             line-height: 50px;
             height: 50px;
             padding:0px 14px;
@@ -407,7 +450,7 @@ img {
         display: table-cell;
         text-align: center;
         a, span {
-            font-family: Montserrat;
+            font-family: DroidSerif;
             font-size: 18px;
             color: #333333;
             border:0px;
@@ -433,65 +476,20 @@ img {
 */
 .archive, .search {
     .term-title {
+        text-align: center;
         position: relative;
         background-color: #fff;
-        font-family: Montserrat;
         font-size: 16px;
-        letter-spacing: 2px;
         color: #333333;
-        margin-bottom: 0px;
+        margin-bottom: 30px;
         margin-top: 0px;
-        padding:30px;
+        padding:0px;
         .term {
-            margin-top:10px;
+            font-family: DroidSerif;
+            margin-top:0px;
             display: block;
             font-size: 30px;
             color: #333333;
-        }
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            bottom:0px;
-            left: 30px;
-            width: 135px;
-            border-bottom: 1px solid #ddd;
-        }
-    }
-    .hentry {
-        background-color: #fff;
-        padding:30px;
-        position: relative;
-        .wp-post-image {
-            width: 135px;
-            height: 135px;
-            object-fit: cover;
-            float: left;
-        }
-        .post-title {
-            text-align: left;
-            font-size: 24px;
-        }
-        .post-date {
-            text-align: left;
-        }
-        .post-author {
-            text-align: left;
-            position: relative;
-        }
-        &.has-post-thumbnail {
-            .post-wrapper {
-                margin-left: 165px;
-            }
-        }
-        &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            bottom:10px;
-            left: 30px;
-            width: 135px;
-            border-bottom: 1px solid #ddd;
         }
     }
 }
@@ -503,12 +501,15 @@ img {
         padding:30px 75px 75px 75px;
         background-color:#fff;
         margin-bottom: 120px;
+        .post-title {
+            font-size: 48px;
+            line-height: 1.04;
+        }
         .post-content {
-            margin-top:50px;
             font-size: 18px;
-            line-height: 1.8;
-            color: #888888;
-            margin-bottom: 120px;
+            line-height: 1.67;
+            color: #333;
+            font-weight: 300;
             h2 {
                 font-size: 24px;
                 font-weight: 900;
@@ -571,113 +572,45 @@ img {
             }
         }
         .post-meta {
-            .post-tags {
-                border-bottom:1px solid #dddddd;
-                padding-bottom: 30px;
+            padding-top:30px;
+            text-align: center;
+            .post-share {
+                padding-top:30px;
                 margin-bottom: 30px;
-                .fa {
-                    color: #888888;
-                    margin-right: 20px;
-                }
+                .icon-top(0px, "\e914");
+            }
+            .post-category {
+                padding-top:30px;
+                margin-bottom: 30px;
+                .icon-top(0px, "\e914");
                 a {
-                    font-family: Montserrat;
-                    font-size: 14px;
-                    line-height: 1.7;
-                    letter-spacing: 2px;
                     color: #333333;
                 }
+            }
+            .post-date {
+                padding-top:30px;
+                margin-bottom: 30px;
+                .icon-top(0px, "\e913");
+            }
+            .post-author {
+                padding-top:30px;
+                margin-bottom: 30px;
+                .icon-top(0px, "\e912");
+            }
+            .post-tags {
+                padding-top:30px;
+                margin-bottom: 30px;
+                a {
+                    color: #333333;
+                }
+                .icon-top(0px, "\e907");
             }
             .post-report {
-                font-family: Montserrat;
-                font-size: 14px;
-                line-height: 1.7;
-                letter-spacing: 2px;
                 color: #333333;
-            }
-        }
-    }
-    .post-share {
-        background-color: #fff;
-        width: 64px;
-        &.affix {
-            top: 0px;
-        }
-        &.affix-bottom {
-            position: absolute;
-        }
-        &:before {
-            background-color: #bbbbbb;
-            width: 100%;
-            height: 64px;
-            display: block;
-            color: #fff;
-            font-family: 'diariomadrid' !important;
-            speak: none;
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-transform: none;
-            line-height: 64px;
-            /* Better Font Rendering =========== */
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            content: "\e914";
-            text-align: center;
-        }
-        a {
-            display: block;
-            line-height: 64px;
-            font-size: 16px;
-            color: #bbbbbb;
-            border-bottom: 1px solid #f1f1f1;
-            text-align: center;
-        }
-    }
-    .post-links {
-        background-color: #fff;
-        margin-bottom: 120px;
-        margin-top:-90px;
-        h3 {
-            background-color: #333333;
-            font-family: Montserrat;
-            font-size: 16px;
-            letter-spacing: 2px;
-            text-align: center;
-            color: #ffffff;
-            padding: 30px;
-            margin-bottom: 30px;
-        }
-        ul {
-            list-style: none;
-            text-align: center;
-            margin: 0px;
-            padding: 0px;
-            li {
-                font-family: Montserrat;
-                font-size: 16px;
-                text-align: center;
-                color: #333333;
-                position: relative;
+                display: block;
+                padding-top:30px;
                 margin-bottom: 30px;
-                padding-bottom: 30px;
-                &:after {
-                    content: "";
-                    position: absolute;
-                    display: block;
-                    width: 150px;
-                    border-top:1px solid #dddddd;
-                    bottom:0px;
-                    left: 50%;
-                    margin-left: -75px;
-                }
-                a {
-                    color: #333333;
-                }
-                &:last-child {
-                    &:after {
-                        display: none;
-                    }
-                }
+                .icon-top(0px, "\e918");
             }
         }
     }

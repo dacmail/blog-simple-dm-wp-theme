@@ -24,7 +24,6 @@
 			register_nav_menus(
 				array(
 				  'main' => esc_html__('Menu principal', 'ungrynerd'),
-				  'secondary' => 'Menu secundario'
 				)
 			);
 		}
@@ -56,9 +55,17 @@
 			'id' => 'sidebar-1',
 		    'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		    'after_widget' => '</div>',
-		    'before_title' => '<h2 class="post-category">',
+		    'before_title' => '<h2 class="widget-title">',
 		 	'after_title' => '</h2>',
-		 	'name' => esc_html__('Barra Lateral', 'ungrynerd')
+		 	'name' => esc_html__('Zona widgets footer 100%', 'ungrynerd')
+		));
+		register_sidebar(array(
+			'id' => 'sidebar-2',
+		    'before_widget' => '<div class="col-sm-6"><div id="%1$s" class="widget %2$s">',
+		    'after_widget' => '</div></div>',
+		    'before_title' => '<h2 class="widget-title">',
+		 	'after_title' => '</h2>',
+		 	'name' => esc_html__('Zona widgets footer 50%', 'ungrynerd')
 		));
 	}
 	add_action('widgets_init', 'ungrynerd_widgets_init');

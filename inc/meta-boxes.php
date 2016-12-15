@@ -24,12 +24,6 @@ $meta_boxes[] = array(
                     'id' => $prefix . 'author',
                     'type' => 'text',
                 ),
-            array(
-                    'name' =>  __('Enlaces', 'ungrynerd'),
-                    'desc' =>  __('Enlaces: a la izquierda el texto y a la derecha la URL del enlace.', 'ungrynerd'),
-                    'id' => $prefix . 'links',
-                    'type' => 'key_value',
-                ),
         ),
     );
 
