@@ -8,21 +8,7 @@
 }
 /*TABLETS VERTICAL*/
 @media (max-width: 991px) {
-    .header {
-        .main-nav {
-            float: none;
-            width: 100%;
-            padding: 0px;
-            margin: 0px;
-            > .menu-item {
-                padding:0px 12px;
-                text-align: left;
-                a {
-                    font-size: 12px;
-                }
-            }
-        }
-    }
+
 }
 /*MOBILE*/
 @media (max-width: 767px) {
@@ -33,18 +19,34 @@
         }
     }
     .header {
+        padding-bottom: 0px;
+        margin-bottom: 20px;
         .navbar-toggle {
-            margin:-8px 0px 0px 0px;
+            margin:7px 0px 0px 0px;
             color: #000;
             font-size: 20px;
         }
+        .logo {
+            font-size: 25px;
+            text-align: left;
+            float: left;
+            width: 80%;
+            margin: 20px 0px;
+        }
         .main-nav {
+            width: 100%;
+            margin:20px 0px;
+            text-align: left;
             .menu-item {
                 width: 100%;
                 display: block;
+                padding:5px 10px;
+                border:0px;
                 .sub-menu {
                     padding: 0px;
                     left:0px;
+                    background: transparent;
+                    border:0px;
                 }
                 &:hover {
                     .sub-menu {
@@ -54,57 +56,17 @@
             }
         }
     }
-    .main-sticky.hentry {
-        .post-data {
-            position: relative;
-            width: 100%;
-        }
-    }
-    .secondary-stickys {
-        .hentry {
-            display: block;
-            width: 100%;
-        }
-    }
     .single, .page {
         .hentry {
-            padding:30px 15px;
-        }
-        .post-share {
-            width: 100%;
-            left:0px;
-            top:0px !important;
-            text-align: center;
-            &:before {
-                width: 50px;
-                line-height: 50px;
-                height: 50px;
-                border:0px;
-                display: inline-block;
-                vertical-align: top;
+            padding: 15px;
+            .post-title {
+                font-size: 35px;
             }
-            a {
-                width: 50px;
-                line-height: 50px;
-                height: 50px;
-                border:0px;
-                display: inline-block;
-                vertical-align: top;
+            .pull-right {
+                float: none !important;
             }
         }
-    }
-    .archive, .search {
-        .hentry {
-            .wp-post-image {
-                display: none;
-            }
-            .post-wrapper, &.has-post-thumbnail .post-wrapper {
-                margin-left: 0px;
-                .post-title {
-                    font-size: 20px;
-                }
-            }
-        }
+
     }
     .footer {
         .pull-right  {
