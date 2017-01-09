@@ -88,7 +88,16 @@ img {
         margin-right: 7px;
     }
 }
-
+.post-share {
+    a {
+        color: #333;
+        display: inline-block;
+        margin:0px 4px;
+        &.icon.wa {
+            display: none;
+        }
+    }
+}
 .post-content {
     font-size: 18px;
     font-weight: 300;
@@ -241,11 +250,6 @@ img {
         font-size: 18px;
         position: relative;
         margin-top:30px;
-        a {
-            color: #333;
-            display: inline-block;
-            margin:0px 4px;
-        }
         &:before {
             position: absolute;
             display: block;
@@ -566,7 +570,7 @@ img {
             .post-category {
                 padding-top:30px;
                 margin-bottom: 30px;
-                .icon-top(0px, "\e914");
+                .icon-top(0px, "\e917");
                 a {
                     color: #333333;
                 }

@@ -9423,6 +9423,14 @@ img {
   font-size: 16px;
   margin-right: 7px;
 }
+.post-share a {
+  color: #333;
+  display: inline-block;
+  margin: 0px 4px;
+}
+.post-share a.icon.wa {
+  display: none;
+}
 .post-content {
   font-size: 18px;
   font-weight: 300;
@@ -9577,11 +9585,6 @@ img {
   font-size: 18px;
   position: relative;
   margin-top: 30px;
-}
-.listing.hentry .post-share a {
-  color: #333;
-  display: inline-block;
-  margin: 0px 4px;
 }
 .listing.hentry .post-share:before {
   position: absolute;
@@ -9988,7 +9991,7 @@ img {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "\e914";
+  content: "\e917";
   text-align: center;
 }
 .single .hentry .post-meta .post-category a,
@@ -10192,6 +10195,9 @@ img {
 /*TABLETS VERTICAL*/
 /*MOBILE*/
 @media (max-width: 767px) {
+  .post-share a.icon.wa {
+    display: inline-block;
+  }
   .pre-header {
     padding: 10px 0px;
   }

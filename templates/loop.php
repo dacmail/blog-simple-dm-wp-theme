@@ -12,6 +12,7 @@
             </div>
         </div>
         <div class="col-sm-3 push-left post-meta">
+            <?php get_template_part('templates/post-share'); ?>
             <p class="post-category"><?php the_category(', '); ?></p>
             <p class="post-date"><?php the_time(get_option('date_format')); ?></p>
             <p class="post-author"><?php get_template_part('templates/post-author'); ?></p>
