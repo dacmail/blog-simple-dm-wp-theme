@@ -17,7 +17,7 @@
             <p class="post-date"><?php the_time(get_option('date_format')); ?></p>
             <p class="post-author"><?php get_template_part('templates/post-author'); ?></p>
             <?php the_tags('<div class="post-tags">', ', ', '</div>'); ?>
-            <a href="http://www.madrid.es/portales/munimadrid/es/Inicio/Actualidad?vgnextchannel=1578e3d5d3e07010VgnVCM100000dc0ca8c0RCRD&vgnextoid=ae50a76d7388f410VgnVCM1000000b205a0aRCRD" target="_blank" class="post-report">Comunicar error en la información</a>
+            <a href="<?php echo add_query_arg(array('articulo' => get_bloginfo('name') . ' - '. get_the_title()), get_blog_permalink(1, 7294)); ?>" target="_blank" class="post-report">Comunicar error en la información</a>
         </div>
     </div>
 </article>
