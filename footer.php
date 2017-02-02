@@ -11,7 +11,7 @@
 
     <footer class="footer">
         <div class="container">
-            &copy; Ayuntamiento de Madrid CC by
+            &copy; Ayuntamiento de Madrid
             <?php wp_nav_menu(array(
                         'container' => 'span',
                         'items_wrap' => '%3$s',
