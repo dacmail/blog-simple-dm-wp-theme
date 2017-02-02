@@ -9,7 +9,13 @@
         <p class="post-date"><i class="icon-ico_calendario"></i>  <?php the_time(get_option('date_format')); ?></p>
         <p class="post-author"><i class="icon-ico_autor"></i> <?php get_template_part('templates/post-author'); ?></p>
         <div class="post-content">
-            <?php the_excerpt(); ?>
+            <?php if (has_excerpt()): ?>
+                <?php the_excerpt(); ?>
+                <p><a href="<?php the_permalink() ?>">Leer más</a></p>
+            <?php else: ?>
+                <?php the_content( 'Sigue leyendo ...' ); ?>
+            <?php endif ?>
+
         </div>
         <?php get_template_part('templates/post-share'); ?>
     </article>
