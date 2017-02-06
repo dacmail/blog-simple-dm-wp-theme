@@ -112,6 +112,15 @@ img {
     max-width: 100%;
     height: auto;
 }
+.post-content, .sidebar .widget, .pagination {
+    a {
+        color: #333333;
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
 
 /*
     HEADER Y PREHEADER
@@ -348,16 +357,14 @@ img {
             margin: 0px;
             padding: 0px;
             li {
-                font-family: DroidSerif;
-                font-size: 16px;
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 1.67;
                 text-align: left;
                 color: #333333;
                 position: relative;
                 margin-bottom: 15px;
                 padding-bottom: 15px;
-                a {
-                    color: #333333;
-                }
             }
         }
         &.widget_text {
@@ -381,6 +388,7 @@ img {
                 border: solid 1px #dddddd;
                 font-size: 14px !important;
                 text-transform: uppercase;
+                text-decoration: none;
                 line-height: 1.7;
                 padding:10px;
                 letter-spacing: 3px;
@@ -458,7 +466,6 @@ img {
         display: table-cell;
         text-align: center;
         a, span {
-            font-family: DroidSerif;
             font-size: 18px;
             color: #333333;
             border:0px;
@@ -523,10 +530,6 @@ img {
                 font-weight: 900;
                 line-height: 1.3;
                 color: #333333;
-            }
-            a {
-                color: #333333;
-                text-decoration: underline;
             }
             blockquote {
                 font-family: DroidSerif;

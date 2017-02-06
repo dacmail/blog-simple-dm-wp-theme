@@ -9451,6 +9451,17 @@ img {
   max-width: 100%;
   height: auto;
 }
+.post-content a,
+.sidebar .widget a,
+.pagination a {
+  color: #333333;
+  text-decoration: underline;
+}
+.post-content a:hover,
+.sidebar .widget a:hover,
+.pagination a:hover {
+  text-decoration: none;
+}
 /*
     HEADER Y PREHEADER
 */
@@ -9684,16 +9695,14 @@ img {
   padding: 0px;
 }
 .sidebar .widget ul li {
-  font-family: DroidSerif;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.67;
   text-align: left;
   color: #333333;
   position: relative;
   margin-bottom: 15px;
   padding-bottom: 15px;
-}
-.sidebar .widget ul li a {
-  color: #333333;
 }
 .sidebar .widget.widget_text {
   text-align: center;
@@ -9717,6 +9726,7 @@ img {
   border: solid 1px #dddddd;
   font-size: 14px !important;
   text-transform: uppercase;
+  text-decoration: none;
   line-height: 1.7;
   padding: 10px;
   letter-spacing: 3px;
@@ -9792,7 +9802,6 @@ img {
 }
 .pagination li a,
 .pagination li span {
-  font-family: DroidSerif;
   font-size: 18px;
   color: #333333;
   border: 0px;
@@ -9866,11 +9875,6 @@ img {
   font-weight: 900;
   line-height: 1.3;
   color: #333333;
-}
-.single .hentry .post-content a,
-.page .hentry .post-content a {
-  color: #333333;
-  text-decoration: underline;
 }
 .single .hentry .post-content blockquote,
 .page .hentry .post-content blockquote {
