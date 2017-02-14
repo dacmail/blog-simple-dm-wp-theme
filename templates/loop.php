@@ -5,7 +5,9 @@
     </h1>
     <div class="row">
         <div class="col-sm-9 pull-right">
-            <?php the_post_thumbnail('col-8') ?>
+            <?php if (has_post_thumbnail() && (!get_post_meta(get_the_ID(), '_ungrynerd_hide_thumb', true)) ): ?>
+                <?php the_post_thumbnail('col-8') ?>
+            <?php endif ?>
             <div class="post-content">
                 <?php the_content( __('Leer m&aacute;s &raquo;', 'ungrynerd')); ?>
                 <?php wp_link_pages(); ?>

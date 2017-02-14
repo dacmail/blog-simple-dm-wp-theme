@@ -24,6 +24,25 @@ $meta_boxes[] = array(
                     'id' => $prefix . 'author',
                     'type' => 'text',
                 ),
+            array(
+                    'name' =>  __('No mostrar imagen destacada en página de artículo', 'ungrynerd'),
+                    'id' => $prefix . 'hide_thumb',
+                    'type' => 'checkbox',
+                ),
+            array(
+                    'name' =>  __('Este post contiene una galería', 'ungrynerd'),
+                    'id' => $prefix . 'has_gallery',
+                    'type' => 'checkbox',
+                    'desc' =>  __('Se mostrará un icono descriptivo en portada', 'ungrynerd'),
+                ),
+            array(
+                'name'       => esc_html__( 'Etiqueta destacada', 'ungrynerd' ),
+                'id'         => $prefix . 'tag',
+                'type'       => 'taxonomy_advanced',
+                'taxonomy'   => 'post_tag',
+                'field_type' => 'select',
+                'std' => '0'
+                )
         ),
     );
 
