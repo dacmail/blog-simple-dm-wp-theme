@@ -9123,6 +9123,12 @@ button.close {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-ico_camara-2:before {
+  content: "\e91b";
+}
+.icon-ico_gallery:before {
+  content: "\e91c";
+}
 .icon-ico_comillasabre-2:before {
   content: "\e919";
 }
@@ -10784,15 +10790,15 @@ img {
 .single .hentry .post-content .gallery,
 .page .hentry .post-content .gallery {
   margin: 40px 0px;
-  padding-top: 100px;
-  border-top: 2px solid #000;
+  padding-top: 80px;
   position: relative;
   width: 100%;
 }
 .single .hentry .post-content .gallery:before,
 .page .hentry .post-content .gallery:before {
-  content: "\e904";
+  content: "\e91c";
   font-family: 'diariomadrid' !important;
+  border-left: 1px solid #979797;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -10801,13 +10807,11 @@ img {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
-  top: -21px;
-  left: 50%;
-  margin-left: -20px;
+  top: 0px;
+  left: 0px;
   width: 40px;
   height: 40px;
-  color: #fff;
-  background-color: #000000;
+  color: #000000;
   line-height: 40px;
   text-align: center;
 }
@@ -10818,15 +10822,17 @@ img {
 .single .hentry .post-content .gallery .gallery-item:first-of-type:before,
 .page .hentry .post-content .gallery .gallery-item:first-of-type:before {
   position: absolute;
-  font-size: 18px;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 40px;
   content: "Galería fotográfica";
+  font-family: 'Droid Serif', serif;
   display: block;
   width: 100%;
-  text-align: center;
-  color: #000000;
-  top: 40px;
+  text-left: center;
+  left: 45px;
+  color: #333;
+  top: 0px;
 }
 .single .hentry .post-content .gallery .gallery-item img,
 .page .hentry .post-content .gallery .gallery-item img {
